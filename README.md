@@ -893,7 +893,7 @@ plt.show()
 
 
     
-![png](output_17_0.png)
+<img src = 'https://github.com/anggapradanaa/Classification_with_an_Academic_Success_Dataset_Kaggle_Playground_Prediction_Competition/blob/main/Visualization.png'>
     
 
 
