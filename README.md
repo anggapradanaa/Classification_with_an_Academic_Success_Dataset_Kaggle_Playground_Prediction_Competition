@@ -1,5 +1,12 @@
 # Classification_with_an_Academic_Success_Dataset_Kaggle_Playground_Prediction_Competition
-Predict academic risk of students in higher education.
+
+# Overview
+Welcome to the 2024 Kaggle Playground Series! We plan to continue in the spirit of previous playgrounds, providing interesting an approachable datasets for our community to practice their machine learning skills, and anticipate a competition each month.
+
+Your Goal: The goal of this competition is to predict academic risk of students in higher education.
+
+# Evaluation
+Submissions are evaluated using the accuracy score.
 
 
 # Importing Libraries and Dataset
