@@ -1,0 +1,2 @@
+# Classification_with_an_Academic_Success_Dataset_Kaggle_Playground_Prediction_Competition
+Predict academic risk of students in higher education.
