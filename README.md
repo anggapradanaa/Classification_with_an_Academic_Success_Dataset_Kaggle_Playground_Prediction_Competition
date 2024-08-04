@@ -8,7 +8,6 @@ Your Goal: The goal of this competition is to predict academic risk of students 
 # Evaluation
 Submissions are evaluated using the accuracy score.
 
-
 # Importing Libraries and Dataset
 
 
@@ -22,6 +21,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.metrics import make_scorer, f1_score, confusion_matrix, ConfusionMatrixDisplay
 from catboost import CatBoostClassifier
 import matplotlib.pyplot as plt
+import seaborn as sns
 ```
 
 
@@ -804,7 +804,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                    &#x27;Scholarship holder&#x27;,
                                                    &#x27;International&#x27;])])),
                 (&#x27;algo&#x27;,
-                 &lt;catboost.core.CatBoostClassifier object at 0x0000016E8E0A3750&gt;)])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" ><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;Pipeline<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;prep&#x27;,
+                 &lt;catboost.core.CatBoostClassifier object at 0x000001A6D529E610&gt;)])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" ><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;&nbsp;Pipeline<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[(&#x27;prep&#x27;,
                  ColumnTransformer(transformers=[(&#x27;numeric&#x27;,
                                                   Pipeline(steps=[(&#x27;scaler&#x27;,
                                                                    StandardScaler())]),
@@ -837,7 +837,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                                    &#x27;Scholarship holder&#x27;,
                                                    &#x27;International&#x27;])])),
                 (&#x27;algo&#x27;,
-                 &lt;catboost.core.CatBoostClassifier object at 0x0000016E8E0A3750&gt;)])</pre></div> </div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;prep: ColumnTransformer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for prep: ColumnTransformer</span></a></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;numeric&#x27;,
+                 &lt;catboost.core.CatBoostClassifier object at 0x000001A6D529E610&gt;)])</pre></div> </div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" ><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;prep: ColumnTransformer<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.compose.ColumnTransformer.html">?<span>Documentation for prep: ColumnTransformer</span></a></label><div class="sk-toggleable__content fitted"><pre>ColumnTransformer(transformers=[(&#x27;numeric&#x27;,
                                  Pipeline(steps=[(&#x27;scaler&#x27;, StandardScaler())]),
                                  [&#x27;Previous qualification (grade)&#x27;,
                                   &#x27;Admission grade&#x27;, &#x27;Age at enrollment&#x27;,
@@ -856,7 +856,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                                   &quot;Mother&#x27;s occupation&quot;, &quot;Father&#x27;s occupation&quot;,
                                   &#x27;Displaced&#x27;, &#x27;Educational special needs&#x27;,
                                   &#x27;Debtor&#x27;, &#x27;Tuition fees up to date&#x27;, &#x27;Gender&#x27;,
-                                  &#x27;Scholarship holder&#x27;, &#x27;International&#x27;])])</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">numeric</label><div class="sk-toggleable__content fitted"><pre>[&#x27;Previous qualification (grade)&#x27;, &#x27;Admission grade&#x27;, &#x27;Age at enrollment&#x27;, &#x27;Curricular units 1st sem (credited)&#x27;, &#x27;Curricular units 1st sem (enrolled)&#x27;, &#x27;Curricular units 1st sem (evaluations)&#x27;, &#x27;Curricular units 1st sem (approved)&#x27;, &#x27;Curricular units 1st sem (grade)&#x27;, &#x27;Curricular units 1st sem (without evaluations)&#x27;, &#x27;Curricular units 2nd sem (credited)&#x27;, &#x27;Curricular units 2nd sem (enrolled)&#x27;, &#x27;Curricular units 2nd sem (evaluations)&#x27;, &#x27;Curricular units 2nd sem (approved)&#x27;, &#x27;Curricular units 2nd sem (grade)&#x27;, &#x27;Curricular units 2nd sem (without evaluations)&#x27;, &#x27;Unemployment rate&#x27;, &#x27;Inflation rate&#x27;, &#x27;GDP&#x27;, &#x27;Application order&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;StandardScaler<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" ><label for="sk-estimator-id-5" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">categoric</label><div class="sk-toggleable__content fitted"><pre>[&#x27;Marital status&#x27;, &#x27;Application mode&#x27;, &#x27;Course&#x27;, &#x27;Daytime/evening attendance&#x27;, &#x27;Previous qualification&#x27;, &#x27;Nacionality&#x27;, &quot;Mother&#x27;s qualification&quot;, &quot;Father&#x27;s qualification&quot;, &quot;Mother&#x27;s occupation&quot;, &quot;Father&#x27;s occupation&quot;, &#x27;Displaced&#x27;, &#x27;Educational special needs&#x27;, &#x27;Debtor&#x27;, &#x27;Tuition fees up to date&#x27;, &#x27;Gender&#x27;, &#x27;Scholarship holder&#x27;, &#x27;International&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox" ><label for="sk-estimator-id-6" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;OneHotEncoder<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.OneHotEncoder.html">?<span>Documentation for OneHotEncoder</span></a></label><div class="sk-toggleable__content fitted"><pre>OneHotEncoder(handle_unknown=&#x27;ignore&#x27;)</pre></div> </div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" ><label for="sk-estimator-id-7" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">CatBoostClassifier</label><div class="sk-toggleable__content fitted"><pre>&lt;catboost.core.CatBoostClassifier object at 0x0000016E8E0A3750&gt;</pre></div> </div></div></div></div></div></div>
+                                  &#x27;Scholarship holder&#x27;, &#x27;International&#x27;])])</pre></div> </div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" ><label for="sk-estimator-id-3" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">numeric</label><div class="sk-toggleable__content fitted"><pre>[&#x27;Previous qualification (grade)&#x27;, &#x27;Admission grade&#x27;, &#x27;Age at enrollment&#x27;, &#x27;Curricular units 1st sem (credited)&#x27;, &#x27;Curricular units 1st sem (enrolled)&#x27;, &#x27;Curricular units 1st sem (evaluations)&#x27;, &#x27;Curricular units 1st sem (approved)&#x27;, &#x27;Curricular units 1st sem (grade)&#x27;, &#x27;Curricular units 1st sem (without evaluations)&#x27;, &#x27;Curricular units 2nd sem (credited)&#x27;, &#x27;Curricular units 2nd sem (enrolled)&#x27;, &#x27;Curricular units 2nd sem (evaluations)&#x27;, &#x27;Curricular units 2nd sem (approved)&#x27;, &#x27;Curricular units 2nd sem (grade)&#x27;, &#x27;Curricular units 2nd sem (without evaluations)&#x27;, &#x27;Unemployment rate&#x27;, &#x27;Inflation rate&#x27;, &#x27;GDP&#x27;, &#x27;Application order&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" ><label for="sk-estimator-id-4" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;StandardScaler<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" ><label for="sk-estimator-id-5" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">categoric</label><div class="sk-toggleable__content fitted"><pre>[&#x27;Marital status&#x27;, &#x27;Application mode&#x27;, &#x27;Course&#x27;, &#x27;Daytime/evening attendance&#x27;, &#x27;Previous qualification&#x27;, &#x27;Nacionality&#x27;, &quot;Mother&#x27;s qualification&quot;, &quot;Father&#x27;s qualification&quot;, &quot;Mother&#x27;s occupation&quot;, &quot;Father&#x27;s occupation&quot;, &#x27;Displaced&#x27;, &#x27;Educational special needs&#x27;, &#x27;Debtor&#x27;, &#x27;Tuition fees up to date&#x27;, &#x27;Gender&#x27;, &#x27;Scholarship holder&#x27;, &#x27;International&#x27;]</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-6" type="checkbox" ><label for="sk-estimator-id-6" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">&nbsp;OneHotEncoder<a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.OneHotEncoder.html">?<span>Documentation for OneHotEncoder</span></a></label><div class="sk-toggleable__content fitted"><pre>OneHotEncoder(handle_unknown=&#x27;ignore&#x27;)</pre></div> </div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-7" type="checkbox" ><label for="sk-estimator-id-7" class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted">CatBoostClassifier</label><div class="sk-toggleable__content fitted"><pre>&lt;catboost.core.CatBoostClassifier object at 0x000001A6D529E610&gt;</pre></div> </div></div></div></div></div></div>
 
 
 
@@ -900,7 +900,43 @@ plt.show()
 
 
     
-<img src = 'https://github.com/anggapradanaa/Classification_with_an_Academic_Success_Dataset_Kaggle_Playground_Prediction_Competition/blob/main/Visualization.png'>
+![png](output_17_0.png)
+    
+
+
+
+```python
+# Display feature importance for the best model
+catboost_model_best = best_model.named_steps['algo']
+feature_importances = catboost_model_best.get_feature_importance()
+feature_names = (best_model.named_steps['prep'].named_transformers_['categoric'].named_steps['onehot'].get_feature_names_out().tolist() + 
+                 best_model.named_steps['prep'].named_transformers_['numeric'].feature_names_in_.tolist())
+
+feature_importance_df = pd.DataFrame({
+    'Feature': feature_names,
+    'Importance': feature_importances
+}).sort_values(by='Importance', ascending=False)
+
+# Filter to get top 10 features
+top_10_features = feature_importance_df.head(10)
+
+# Plot feature importance for top 10 features
+plt.figure(figsize=(12, 8))
+ax = sns.barplot(x='Importance', y='Feature', data=top_10_features)
+plt.title('Top 10 Feature Importance')
+plt.xlabel('Importance')
+plt.ylabel('Feature')
+
+# Add labels to the bars
+for i in ax.containers:
+    ax.bar_label(i, fmt='%.2f')
+
+plt.show()
+```
+
+
+    
+![png](output_18_0.png)
     
 
 
